@@ -4,6 +4,8 @@ public class MaquinaPalomitas extends Maquina{
 
     private static int siguienteNumero = 1;
 
+    private static final double RECARGO_CARRITO = 40.0;
+
     private final int porcionesPorHora;
     private final boolean carritoIntegrado;
 
@@ -23,6 +25,10 @@ public class MaquinaPalomitas extends Maquina{
         return codigo;
     }
 
+    public int getPorcionesPorHora() {
+        return porcionesPorHora;
+    }
+
     public int getPorcionesPorhora() {
         return porcionesPorHora;
     }
@@ -39,7 +45,7 @@ public class MaquinaPalomitas extends Maquina{
         double recargo = 0;
 
         if(carritoIntegrado) {
-            recargo = 40 * dias;
+            recargo = RECARGO_CARRITO * dias;
         }
         return costoBase + recargo;
     }
@@ -51,14 +57,7 @@ public class MaquinaPalomitas extends Maquina{
 
     @Override 
     public String getDetalles() {
-        String teieneCarrito;
-
-        if (carritoIntegrado) {
-            teieneCarrito = "Si";
-        } else {
-            teieneCarrito = "No";
-        }
-        return "Porciones por hora: " + porcionesPorHora + " ¿Carrito integrado?: " + teieneCarrito;
-        
+        String tieneCarrito = carritoIntegrado ? "Si" : "No";
+        return "Porciones por hora: " + porcionesPorHora + " | Carrito: " + tieneCarrito;
     }
 }

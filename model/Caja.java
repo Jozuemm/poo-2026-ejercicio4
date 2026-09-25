@@ -16,8 +16,12 @@ public class Caja {
         ingresos += monto;
     }
 
-    public double getIngesos() {
+    public double getIngresos() {
         return ingresos;
+    }
+
+    public double getIngesos() {
+        return getIngresos();
     }
     
 }

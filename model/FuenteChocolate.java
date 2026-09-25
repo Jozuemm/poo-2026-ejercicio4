@@ -4,10 +4,11 @@ public class FuenteChocolate extends Maquina {
 
     private static int siguienteNumero = 1;
 
+    private static final double RECARGO_POR_KG = 20.0;
     private final double capacidadKg;
 
-    public FuenteChocolate(String marca, String modelo, String tarifaDiaria, double capacidadKg) {
-        super (generarCodigo(), marca, modelo, tarifaDiaria);
+    public FuenteChocolate(String marca, String modelo, double tarifaDiaria, double capacidadKg) {
+        super(generarCodigo(), marca, modelo, tarifaDiaria);
         if (capacidadKg <= 0){
             throw new IllegalArgumentException("La capacidad debe ser mayor a cero");
         }
@@ -30,7 +31,7 @@ public class FuenteChocolate extends Maquina {
         validarDias(dias);
 
         double costoBase = getTarifaDiaria() * dias;
-        double recargo = 20 * dias * capacidadKg;
+        double recargo = RECARGO_POR_KG * dias * capacidadKg;
         return costoBase + recargo;
     }
 

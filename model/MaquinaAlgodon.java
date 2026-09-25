@@ -4,6 +4,9 @@ package model;
 public class MaquinaAlgodon extends Maquina{
 
     private static int siguienteNumero = 1;// esto es para generar el codigo
+    private static final int LIMITE_POTENCIA = 1000;
+    private static final double RECARGO_POTENCIA = 60.0;
+
     private final int potenciaWatts;
 
     public MaquinaAlgodon(String marca, String modelo, double tarifaDiaria, int potenciaWatts) {
@@ -32,8 +35,8 @@ public class MaquinaAlgodon extends Maquina{
         //Calcular total y si la potencia es mas de 1000 se cobra tarifa extra
         double total = getTarifaDiaria() * dias;
 
-        if (potenciaWatts > 1000) {
-            total += 60;
+        if (potenciaWatts > LIMITE_POTENCIA) {
+            total += RECARGO_POTENCIA;
         }
         return total;
     }

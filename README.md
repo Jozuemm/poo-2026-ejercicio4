@@ -62,3 +62,18 @@ El controlador solo llamará a registrarIngreso() despues de comprobar que el al
 8. Si el usuario cancela, no se modifica ningún objeto
 
 Esta será la base ordenada para implementar primero la version de consola. Despues asi podremos agregar VistaSwing para aprender a ya hacer front jeje
+
+## Instrucciones de Compilación y Ejecución
+
+### Compilación
+Desde la raíz del proyecto:
+```bash
+javac -d bin model/*.java controller/*.java view/*.java app/*.java
+```
+O simplemente haciendo doble clic en `compilar.bat`.
+
+### Ejecución
+```bash
+java -cp bin app.Main
+```
+O haciendo doble clic en el archivo `ejecutar.bat`.
